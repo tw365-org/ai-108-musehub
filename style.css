@@ -1,41 +1,97 @@
-body { 
-    background-color: #0b0e14; 
-    color: #e2e8f0; 
-    font-family: 'Segoe UI', 'PingFang TC', 'Microsoft JhengHei', sans-serif; 
-    min-height: 100vh;
+/**
+ * AI 108 MuseHub - Resilience Script
+ */
+let aiHeroes = [];
+let currentPage = 1;
+const itemsPerPage = 10;
+const flags = { "TW": "🇹🇼", "US": "🇺🇸", "CN": "🇨🇳", "FR": "🇫🇷", "DE": "🇩🇪", "JP": "🇯🇵", "UK": "🇬🇧", "CA": "🇨🇦", "AU": "🇦🇺", "SG": "🇸🇬", "AT": "🇦🇹", "IL": "🇮🇱", "GE": "格魯", "IN": "印", "LU": "盧", "IT": "意", "RU": "俄" };
+
+async function loadData() {
+    const loadingEl = document.getElementById('loading');
+    const gridEl = document.getElementById('toolsGrid');
+
+    try {
+        const response = await fetch('data.json?v=' + Date.now());
+        if (!response.ok) throw new Error('Data load failed');
+        aiHeroes = await response.json();
+    } catch (error) {
+        console.error("Critical: Fallback activated.", error);
+        aiHeroes = [{ "id": 1, "name": "LMSYS (鏡像站)", "url": "https://lmarena.ai/zh", "cat": "對話", "country": "US", "speed": 4 }];
+    } finally {
+        if (loadingEl) loadingEl.style.display = 'none';
+        if (gridEl) gridEl.classList.remove('hidden');
+        render();
+    }
 }
 
-.muse-card { 
-    background: rgba(30, 41, 59, 0.4); 
-    backdrop-filter: blur(12px); 
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-    border: 1px solid rgba(255, 255, 255, 0.1); 
+function probeLatency(url, id) {
+    const start = performance.now();
+    fetch(url, { mode: 'no-cors', cache: 'no-cache' }).then(() => {
+        const end = performance.now();
+        const latency = Math.round(end - start);
+        const el = document.getElementById(`probe-${id}`);
+        if (el) {
+            el.innerText = `${latency}ms`;
+            el.className = latency < 500 ? 'text-emerald-400' : 'text-orange-400';
+        }
+    }).catch(() => {
+        const el = document.getElementById(`probe-${id}`);
+        if (el) el.innerText = "N/A";
+    });
 }
 
-.muse-card:hover { 
-    transform: translateY(-8px); 
-    border-color: #a78bfa; 
-    box-shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.3); 
+function render() {
+    const grid = document.getElementById('toolsGrid');
+    if (!grid) return;
+    grid.innerHTML = "";
+    
+    const search = document.getElementById('searchInput')?.value.toLowerCase() || "";
+    const cat = document.getElementById('catFilter')?.value || "";
+    
+    const filtered = aiHeroes.filter(t => t.name.toLowerCase().includes(search) && (cat === "" || t.cat === cat));
+    const paginated = filtered.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+    paginated.forEach(tool => {
+        const card = document.createElement('div');
+        card.className = "muse-card p-7 rounded-3xl flex flex-col justify-between h-full border border-slate-800 bg-slate-900/40 backdrop-blur-md";
+        card.innerHTML = `
+            <div>
+                <div class="flex justify-between items-center mb-6 text-[10px] font-bold text-violet-400 uppercase tracking-widest">
+                    <span>${tool.cat}</span>
+                    <span class="text-slate-500">${flags[tool.country] || tool.country}</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2 leading-tight">${tool.name}</h3>
+                <div class="text-[10px] font-mono mt-4" id="probe-${tool.id}">Probing...</div>
+            </div>
+            <div class="mt-10">
+                <a href="${tool.url}" target="_blank" class="block w-full text-center bg-violet-600 hover:bg-violet-500 py-3 rounded-2xl text-sm font-bold text-white transition shadow-lg shadow-violet-900/20">探索靈感</a>
+            </div>
+        `;
+        grid.appendChild(card);
+        probeLatency(tool.url, tool.id);
+    });
+    renderPagination(filtered.length);
 }
 
-.signal-bar { width: 4px; margin-right: 2px; background-color: #334155; display: inline-block; border-radius: 2px; }
-.signal-on { background: linear-gradient(to top, #8b5cf6, #c084fc); }
-
-.pagination-btn { cursor: pointer; padding: 8px 16px; border-radius: 50px; background: #1e293b; color: #94a3b8; transition: 0.3s; }
-.pagination-btn.active { background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%); color: white; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4); }
-
-.loading-spinner { border: 3px solid rgba(167, 139, 250, 0.1); border-left-color: #a78bfa; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; }
-@keyframes spin { to { transform: rotate(360deg); } }
-
-/* 貢獻者頭像樣式 */
-.contributor-dot {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 2px solid #334155;
-    transition: 0.3s;
+function renderPagination(total) {
+    const pages = Math.ceil(total / itemsPerPage);
+    const container = document.getElementById('pagination');
+    if (!container) return;
+    container.innerHTML = "";
+    if (pages <= 1) return;
+    for (let i = 1; i <= pages; i++) {
+        const btn = document.createElement('button');
+        btn.innerText = i;
+        btn.className = `w-10 h-10 rounded-full border border-slate-800 text-xs ${i === currentPage ? 'bg-violet-600 text-white border-violet-600' : 'text-slate-500 hover:bg-slate-800'}`;
+        btn.onclick = () => { window.scrollTo({top: 0, behavior: 'smooth'}); currentPage = i; render(); };
+        container.appendChild(btn);
+    }
 }
-.contributor-dot:hover {
-    transform: scale(1.2);
-    border-color: #a78bfa;
-}
+
+// 防呆監聽器設定
+const sInput = document.getElementById('searchInput');
+const cFilter = document.getElementById('catFilter');
+if (sInput) sInput.addEventListener('input', () => { currentPage = 1; render(); });
+if (cFilter) cFilter.addEventListener('change', () => { currentPage = 1; render(); });
+
+loadData();

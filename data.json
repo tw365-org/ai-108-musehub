@@ -49,6 +49,6 @@
   { "id": 48, "name": "CodePen (Guest View)", "url": "https://codepen.io", "cat": "程式", "country": "US", "speed": 5 },
   { "id": 49, "name": "JSFiddle (Editor)", "url": "https://jsfiddle.net", "cat": "程式", "country": "US", "speed": 5 },
   { "id": 50, "name": "Warp Terminal (AI Lab)", "url": "https://www.warp.dev", "cat": "程式", "country": "US", "speed": 5 },
-  { "id": 51, "name": "AI 108 Star 51", "url": "https://lmarena.ai/zh", "cat": "對話", "country": "US", "speed": 5 },
+  { "id": 51, "name": "BreeXe (LMSYS Demo)", "url": "https://lmarena.ai/zh?model=mixtral-8x7b-instruct", "cat": "台灣專區", "country": "TW", "speed": 4 },
   { "id": 108, "name": "Final Muse (LMSYS)", "url": "https://lmarena.ai/zh", "cat": "對話", "country": "US", "speed": 5 }
 ]

@@ -4,42 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI 108 MuseHub - 全球 AI 靈感座標</title>
-    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/10490/10490230.png">
+    
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/10490/10490230.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="p-6 md:p-12 lg:p-20 bg-[#0b0e14] text-slate-200">
+<body class="p-6 md:p-12 lg:p-20 bg-[#0b0e14]">
     <div class="max-w-7xl mx-auto">
         <header class="text-center mb-16">
             <div class="inline-block px-4 py-1.5 mb-8 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs tracking-widest font-black uppercase">Open Creativity Network</div>
             <h1 class="text-5xl md:text-7xl font-black text-white mb-8">AI 108 <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-blue-400">MuseHub</span></h1>
-            <p class="text-slate-300 text-xl font-mono mb-12">git commit -m "我們都是無限創造力的分叉 (Fork)。"</p>
+            
+            <div class="max-w-3xl mx-auto mb-12">
+                <p class="text-slate-300 text-lg md:text-2xl font-mono leading-relaxed mb-4">
+                    <span class="text-violet-500">git commit -m</span> "我們都是無限創造力的分叉 (Fork)。"
+                </p>
+                <p class="text-slate-500 text-sm tracking-widest uppercase">
+                    // 匯集全球 108 個免註冊靈感座標。向全人類的 SOURCE CODE 致敬。
+                </p>
+            </div>
             
             <div class="flex flex-col md:flex-row justify-center gap-4 items-center">
-                <input type="text" id="searchInput" placeholder="尋找免註冊座標..." class="w-full max-w-md px-6 py-4 rounded-2xl bg-slate-900/60 border border-slate-700 outline-none focus:ring-2 focus:ring-violet-500 text-sm">
+                <input type="text" id="searchInput" placeholder="尋找免註冊座標..." 
+                    class="w-full max-w-md px-6 py-4 rounded-2xl bg-slate-900/60 border border-slate-700 outline-none focus:ring-2 focus:ring-violet-500 text-sm">
                 
-                <select id="catFilter" class="bg-slate-900/60 border border-slate-700 rounded-2xl px-8 py-4 outline-none focus:ring-2 focus:ring-violet-500 text-sm appearance-none cursor-pointer">
-                    <option value="">所有領域</option>
+                <select id="catFilter" class="w-full md:w-56 bg-slate-900/60 border border-slate-700 rounded-2xl px-8 py-4 outline-none focus:ring-2 focus:ring-violet-500 text-sm text-slate-300 appearance-none cursor-pointer">
+                    <option value="">探索所有維度</option>
                     <option value="台灣專區">🇹🇼 台灣專區</option>
                     <option value="對話">智慧對話</option>
                     <option value="圖像">視覺創作</option>
+                    <option value="影片">影音藝術</option>
+                    <option value="程式">開發邏輯</option>
                 </select>
             </div>
         </header>
 
         <div id="loading" class="flex flex-col items-center my-32">
             <div class="loading-spinner mb-6"></div>
-            <p class="text-slate-500 animate-pulse font-mono text-xs uppercase">Syncing Safe Forks...</p>
+            <p class="text-slate-500 animate-pulse font-mono text-xs uppercase tracking-widest">Syncing Safe Forks...</p>
         </div>
 
         <div id="toolsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 hidden"></div>
         <div id="pagination" class="flex justify-center mt-20 gap-3"></div>
-        
-        <div class="mt-32 p-10 border-t border-slate-800/50 text-center">
-            <h4 class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-8">Muse Contributors</h4>
-            <div id="contributorList" class="flex justify-center gap-4"></div>
-        </div>
     </div>
     <script src="script.js"></script>
 </body>
