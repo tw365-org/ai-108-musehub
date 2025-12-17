@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI 108 MuseHub - 全球 AI 靈感座標</title>
+    
+    <link rel="icon" type="image/png" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/svgs/solid/wand-magic-sparkles.svg">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -13,7 +16,7 @@
     <div class="max-w-7xl mx-auto">
         <header class="text-center mb-16">
             <div class="inline-block px-4 py-1.5 mb-8 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs tracking-[0.3em] font-black uppercase">
-                Distributed Inspiration Network
+                Open Creativity Network
             </div>
             
             <h1 class="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter">
@@ -36,7 +39,7 @@
                         class="w-full pl-12 pr-6 py-4 rounded-2xl bg-slate-900/60 border border-slate-700 outline-none focus:ring-2 focus:ring-violet-500 transition text-sm font-medium">
                 </div>
                 <div class="relative w-full md:w-auto">
-                    <select id="catFilter" class="w-full md:w-56 bg-slate-900/60 border border-slate-700 rounded-2xl px-8 py-4 outline-none focus:ring-2 focus:ring-violet-500 text-sm appearance-none cursor-pointer font-bold text-slate-300">
+                    <select id="catFilter" class="w-full md:w-56 bg-slate-900/60 border border-slate-700 rounded-2xl px-8 py-4 outline-none focus:ring-2 focus:ring-violet-500 text-sm appearance-none cursor-pointer font-bold text-slate-300 text-center">
                         <option value="">探索所有領域</option>
                         <option value="台灣專區">🇹🇼 台灣專區</option>
                         <option value="對話">智慧對話 (Chat)</option>
@@ -59,26 +62,17 @@
 
         <div id="pagination" class="flex justify-center mt-20 flex-wrap gap-3"></div>
 
-        <div class="mt-32 p-10 border-t border-slate-800/50 rounded-3xl bg-slate-900/20 backdrop-blur-sm">
-            <div class="flex flex-col items-center">
-                <h4 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em] mb-8">
-                    謬思貢獻者名單 <span class="text-violet-500">/ Muse Contributors</span>
-                </h4>
-                <div id="contributorList" class="flex items-center gap-4 flex-wrap justify-center">
-                    </div>
-                <p class="mt-8 text-slate-600 text-[11px] max-w-md text-center leading-relaxed">
-                    本專案由社群共同維護。如果您發現任何失效連結或新的免註冊工具，請發起一個 Pull Request，您的貢獻將被永久記錄於此。
-                </p>
-            </div>
+        <div class="mt-32 p-10 border-t border-slate-800/50 rounded-3xl bg-slate-900/20 backdrop-blur-sm text-center">
+            <h4 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em] mb-8">
+                謬思貢獻者名單 <span class="text-violet-500">/ Muse Contributors</span>
+            </h4>
+            <div id="contributorList" class="flex items-center gap-4 flex-wrap justify-center">
+                </div>
         </div>
 
         <footer class="mt-20 text-center pb-12">
-            <div class="flex justify-center gap-6 mb-8 text-slate-700 text-lg">
-                <a href="https://github.com/tw365-org/ai-108-musehub" target="_blank" class="hover:text-violet-400 transition"><i class="fa-brands fa-github"></i></a>
-                <a href="#" class="hover:text-blue-400 transition"><i class="fa-solid fa-circle-nodes"></i></a>
-            </div>
-            <p class="text-slate-600 text-[10px] tracking-[0.3em] uppercase font-bold">
-                &copy; 2025 AI 108 MuseHub · Created for Humanity · <span class="text-slate-800">Branch: Main</span>
+            <p class="text-slate-600 text-[10px] tracking-[0.3em] uppercase font-bold italic">
+                &copy; 2025 AI 108 MuseHub · Created for Humanity
             </p>
         </footer>
     </div>
