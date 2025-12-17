@@ -16,45 +16,87 @@
     <div class="max-w-7xl mx-auto">
         <header class="text-center mb-16">
             <div class="inline-block px-4 py-1.5 mb-8 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs tracking-[0.3em] font-black uppercase">
-                Open Creativity Network
+                Distributed Inspiration Network
             </div>
             
             <h1 class="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter">
                 AI 108 <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-blue-400">MuseHub</span>
             </h1>
 
-            <div class="max-w-3xl mx-auto mb-12">
-                <p class="text-slate-300 text-lg md:text-2xl font-mono leading-relaxed mb-4">
+            <div class="max-w-4xl mx-auto mb-12">
+                <p class="text-slate-200 text-xl md:text-3xl font-mono leading-relaxed mb-6">
                     <span class="text-violet-500">git commit -m</span> "我們都是無限創造力的分叉 (Fork)。"
                 </p>
-                <p class="text-slate-500 text-sm md:text-base tracking-widest uppercase">
-                    // 匯集全球 108 個免註冊靈感座標。向全人類的 Source Code 致敬。
-                </p>
+                <div class="space-y-2">
+                    <p class="text-slate-400 text-sm md:text-lg tracking-widest uppercase">
+                        // 匯集全球 108 個免註冊靈感座標。
+                    </p>
+                    <p class="text-slate-500 text-xs md:text-sm italic">
+                        向全人類的 Source Code 與「去中心化」精神致敬。
+                    </p>
+                </div>
             </div>
             
-            <div class="flex flex-col md:flex-row justify-center gap-4 items-center">
+            <div class="flex flex-col md:flex-row justify-center gap-4 items-center mt-12">
                 <div class="relative w-full max-w-md">
                     <i class="fa-solid fa-terminal absolute left-5 top-1/2 -translate-y-1/2 text-violet-500/50 text-xs"></i>
-                    <input type="text" id="searchInput" placeholder="尋找免註冊座標..." 
-                        class="w-full pl-12 pr-6 py-4 rounded-2xl bg-slate-900/60 border border-slate-700 outline-none focus:ring-2 focus:ring-violet-500 transition text-sm">
+                    <input type="text" id="searchInput" placeholder="搜尋座標名稱 (例如：LMSYS, DuckAI)..." 
+                        class="w-full pl-12 pr-6 py-4 rounded-2xl bg-slate-900/60 border border-slate-700 outline-none focus:ring-2 focus:ring-violet-500 transition text-sm font-medium">
+                </div>
+                <div class="relative w-full md:w-auto">
+                    <select id="catFilter" class="w-full md:w-64 bg-slate-900/60 border border-slate-700 rounded-2xl px-8 py-4 outline-none focus:ring-2 focus:ring-violet-500 text-sm appearance-none cursor-pointer font-bold text-slate-300 text-center">
+                        <option value="">探索所有維度</option>
+                        <option value="台灣專區">🇹🇼 台灣專區 (TAIDE/BreeXe)</option>
+                        <option value="對話">智慧對話 (LLM Arena)</option>
+                        <option value="圖像">視覺創作 (Generative Art)</option>
+                        <option value="影片">影音藝術 (Media AI)</option>
+                        <option value="程式">開發邏輯 (Dev Tools)</option>
+                    </select>
+                    <i class="fa-solid fa-code-branch absolute right-6 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none text-xs"></i>
                 </div>
             </div>
         </header>
 
+        
+
         <div id="loading" class="flex flex-col items-center my-32">
             <div class="loading-spinner mb-6"></div>
-            <p class="text-slate-500 animate-pulse font-mono text-xs tracking-widest uppercase">Syncing Safe Forks...</p>
+            <p class="text-slate-500 animate-pulse font-mono text-xs tracking-widest uppercase">Initializing Safe Forks...</p>
         </div>
 
-        <div id="toolsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 hidden"></div>
+        <div id="toolsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 hidden">
+        </div>
+
         <div id="pagination" class="flex justify-center mt-20 flex-wrap gap-3"></div>
 
-        <div class="mt-32 p-10 border-t border-slate-800/50 rounded-3xl bg-slate-900/20 backdrop-blur-sm text-center">
-            <h4 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em] mb-8">
+        
+
+        <div class="mt-40 p-10 border-t border-slate-800/50 rounded-3xl bg-slate-900/20 backdrop-blur-sm text-center">
+            <h4 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em] mb-10">
                 謬思貢獻者名單 <span class="text-violet-500">/ Muse Contributors</span>
             </h4>
-            <div id="contributorList" class="flex items-center gap-4 flex-wrap justify-center"></div>
+            <div id="contributorList" class="flex items-center gap-4 flex-wrap justify-center">
+                </div>
+            <div class="mt-10">
+                <a href="https://github.com/tw365-org/ai-108-musehub" target="_blank" 
+                   class="text-[11px] px-6 py-2 rounded-full border border-slate-700 text-slate-500 hover:text-violet-400 hover:border-violet-500 transition font-mono uppercase tracking-widest">
+                    Become a Fork
+                </a>
+            </div>
         </div>
+
+        <footer class="mt-24 text-center pb-12 border-t border-slate-900 pt-12">
+            <p class="text-slate-600 text-[11px] mb-8 font-serif italic">
+                "Invert, always invert." — We evolve through community feedback.
+            </p>
+            <div class="flex justify-center gap-8 text-slate-700 text-xl mb-12">
+                <a href="https://github.com/tw365-org/ai-108-musehub" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+                <a href="https://tw365.org" target="_blank" class="hover:text-violet-400 transition"><i class="fa-solid fa-globe"></i></a>
+            </div>
+            <p class="text-slate-700 text-[10px] tracking-[0.4em] uppercase font-bold">
+                &copy; 2025 AI 108 MuseHub · Created for Humanity · Version 1.0.1-Stable
+            </p>
+        </footer>
     </div>
 
     <script src="script.js"></script>
