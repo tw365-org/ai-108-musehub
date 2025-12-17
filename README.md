@@ -1,54 +1,61 @@
-# 🌌 AI 108 MuseHub
+# 🌌 AI 108 MuseHub 
 
-[繁體中文](#繁體中文) | [English](#english)
+> **「我們都是無限創造力的分叉 (Fork)。」** > **"Creativity is the common language that transcends gender and borders."**
+
+[繁體中文](#-繁體中文) | [English](#-english) | [參與貢獻](#-如何貢獻)
 
 ---
 
-<a name="繁體中文"></a>
 ## 🇹🇼 繁體中文
 
-### 專案簡介
-**AI 108 MuseHub** 是一個開源的數位座標集，精選全球 **108 個免註冊、免登入**即可體驗的 AI 工具。
+### 💡 專案理念
+**AI 108 MuseHub** 是一個由社群驅動的數位座標集，精選全球 **108 個免註冊、免登入**即可體驗的 AI 工具。
 
-本專案的靈感來自於「創造力是人類共有的語言」。我們屏棄了傳統的性別偏見標籤，以 **Muse (謬思)** 為名，致敬所有賦予 AI 生命的開發者。不論背景，我們都是創造力的產兒。這份清單旨在打破技術門檻，讓每個人都能自由、平等地探索智慧的邊界。
+本專案屏棄了傳統的性別化標籤（如「好漢」），改以 **Muse (謬思)** 為名。我們深信 AI 是人類集體智慧的結晶，探索它的過程不應有帳號註冊的門檻，更不應有性別與背景的隔閡。
 
 ### 🌟 核心特色
-- **免註冊體驗**：所有收錄工具皆可直接使用，保護您的數位隱私。
-- **台灣專區**：特別收錄台灣本土優質 AI 專案（如 TAIDE、聯發科 BreeXe 等）。
-- **全球視野**：涵蓋美國、歐洲、日本及亞洲各地的傑出 AI 工具。
-- **社群維護**：資料與程式碼分離（`data.json`），歡迎全球開發者共同維護連線品質。
-
-### 🛠 如何貢獻
-如果您發現新的免註冊 AI 工具，或某個網址已失效：
-1. **Fork** 本倉庫。
-2. 編輯 `data.json` 檔案。
-3. 提交 **Pull Request**。
+- **純淨體驗**：所有收錄站點皆經審核，確保「免註冊」即可直接 Chat 或創作。
+- **動態診斷**：內建自動延遲檢測 (Probing)，即時顯示您的連線品質。
+- **生存機制**：具備預載核心名單，確保系統在任何情況下皆能提供導航。
+- **台灣專區**：優先收錄本土傑出 AI 專案，讓台灣的創造力被世界看見。
 
 ---
 
-<a name="english"></a>
 ## 🌎 English
 
-### Introduction
-**AI 108 MuseHub** is an open-source collection of digital coordinates, featuring **108 AI tools** from around the globe that can be experienced **without registration or login**.
+### 💡 Concept
+**AI 108 MuseHub** is a community-driven digital coordinate hub featuring **108 registration-free AI tools** worldwide. 
 
-Inspired by the idea that "creativity is a universal language," this project moves away from gendered labels and adopts the name **Muse** to honor the creative spark in every developer. We believe AI should be accessible to everyone, regardless of background. This hub is designed to lower the barrier to entry, allowing anyone to explore the frontiers of intelligence freely and equally.
+We embrace the name **Muse** to honor universal creativity. We believe that the journey to explore AI should be barrier-free—no login required, no gender bias, just pure inspiration.
 
 ### 🌟 Key Features
-- **No Registration Required**: All listed tools are ready to use, protecting your digital privacy.
-- **Taiwan Spotlight**: Special category for high-quality AI projects from Taiwan (e.g., TAIDE, MediaTek BreeXe).
-- **Global Vision**: Curated tools from the US, Europe, Japan, and across Asia.
-- **Community Driven**: Data is separated into `data.json` for easy updates and connection quality reporting via the community.
-
-### 🛠 How to Contribute
-If you find a new no-registration AI tool or a broken link:
-1. **Fork** this repository.
-2. Edit the `data.json` file.
-3. Submit a **Pull Request**.
+- **Zero-Friction**: Every tool is verified for "No Registration Required" access.
+- **Live Diagnostics**: Built-in latency probing to check connection quality in real-time.
+- **Resilience**: Features a fallback mechanism to ensure the hub stays functional.
+- **Global & Local**: Spotlighting both international giants and local Taiwanese innovators.
 
 ---
 
-## 📄 License
-MIT License - 自由使用，造福社群。
+<a name="如何貢獻"></a>
+## 🛠 如何貢獻 (How to Contribute)
 
-*"Creativity is the common language that transcends gender and borders."*
+本專案的核心是**大家**。我們需要您的力量來維持星圖的閃耀：
+
+1. **回報狀態**：若發現座標「斷線」、「太慢」或「需要註冊了」，請直接點擊網頁上的按鈕或開 [Issue](https://github.com/tw365-org/ai-108-musehub/issues)。
+2. **新增座標**：發現新的免註冊 AI 神站？請修改 `data.json` 並送出 **Pull Request**。
+3. **優化程式**：歡迎對 `script.js` 或 `style.css` 進行效能提升或美化。
+
+**所有貢獻者（Contributors）的頭像將會自動顯示在網頁底部的榮譽榜中！**
+
+---
+
+## 🛡 安全與隱私 (Security & Privacy)
+- **安全過濾**：本專案程式碼內建 URL 校驗，拒絕任何縮網址或高風險連結。
+- **匿名性**：本網頁不追蹤、不記錄您的個人資訊。
+
+---
+
+## 📄 授權 (License)
+本專案採用 **MIT License**。
+
+> 「告訴我我會死在哪裡，那我就永遠不去那裡。」 —— 我們透過社群回報，避開所有失效與不友善的工具。
