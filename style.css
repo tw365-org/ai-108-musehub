@@ -1,0 +1,41 @@
+body { 
+    background-color: #0b0e14; 
+    color: #e2e8f0; 
+    font-family: 'Segoe UI', 'PingFang TC', 'Microsoft JhengHei', sans-serif; 
+    min-height: 100vh;
+}
+
+.muse-card { 
+    background: rgba(30, 41, 59, 0.4); 
+    backdrop-filter: blur(12px); 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.muse-card:hover { 
+    transform: translateY(-8px); 
+    border-color: #a78bfa; 
+    box-shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.3); 
+}
+
+.signal-bar { width: 4px; margin-right: 2px; background-color: #334155; display: inline-block; border-radius: 2px; }
+.signal-on { background: linear-gradient(to top, #8b5cf6, #c084fc); }
+
+.pagination-btn { cursor: pointer; padding: 8px 16px; border-radius: 50px; background: #1e293b; color: #94a3b8; transition: 0.3s; }
+.pagination-btn.active { background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%); color: white; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4); }
+
+.loading-spinner { border: 3px solid rgba(167, 139, 250, 0.1); border-left-color: #a78bfa; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* 貢獻者頭像樣式 */
+.contributor-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #334155;
+    transition: 0.3s;
+}
+.contributor-dot:hover {
+    transform: scale(1.2);
+    border-color: #a78bfa;
+}

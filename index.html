@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 108 MuseHub - 全球 AI 靈感座標</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="p-6 md:p-12 lg:p-20">
+    <div class="max-w-7xl mx-auto">
+        <header class="text-center mb-16">
+            <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs tracking-widest font-bold uppercase">Open Creativity Network</div>
+            <h1 class="text-5xl md:text-6xl font-black text-white mb-6">AI 108 <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-blue-400">MuseHub</span></h1>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">我們都是創造力的產兒。匯集全球 108 個<span class="text-violet-300">免註冊</span>靈感座標。</p>
+            <div class="mt-12 flex flex-col md:flex-row justify-center gap-4">
+                <input type="text" id="searchInput" placeholder="搜尋座標..." class="w-full max-w-md px-6 py-4 rounded-full bg-slate-900/60 border border-slate-700 outline-none focus:ring-2 focus:ring-violet-500 text-sm">
+                <select id="catFilter" class="bg-slate-900/60 border border-slate-700 rounded-full px-8 py-4 outline-none focus:ring-2 focus:ring-violet-500 text-sm appearance-none cursor-pointer">
+                    <option value="">所有領域</option>
+                    <option value="台灣專區">🇹🇼 台灣專區</option>
+                    <option value="對話">智慧對話</option>
+                    <option value="圖像">視覺創作</option>
+                    <option value="影片">影音藝術</option>
+                    <option value="程式">開發邏輯</option>
+                </select>
+            </div>
+        </header>
+
+        <div id="loading" class="flex justify-center my-32"><div class="loading-spinner"></div></div>
+        <div id="toolsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 hidden"></div>
+        <div id="pagination" class="flex justify-center mt-20 flex-wrap gap-3"></div>
+
+        <div class="mt-32 p-8 border-t border-slate-800/50 flex flex-col items-center">
+            <h4 class="text-xs font-bold text-slate-500 uppercase tracking-[0.2em] mb-6">謬思貢獻者名單 (Muse Contributors)</h4>
+            <div id="contributorList" class="flex items-center gap-4 flex-wrap justify-center">
+                </div>
+        </div>
+
+        <footer class="mt-12 text-center text-slate-600 text-[10px] tracking-widest uppercase">
+            &copy; 2025 AI 108 MuseHub · Created for Humanity
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
